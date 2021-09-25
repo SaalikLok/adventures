@@ -1,7 +1,7 @@
 class RestaurantsController < ApiController
-  def index
+  def new
   end
-
-  def show
+  
+  def create
   end
 end

@@ -7,6 +7,11 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
+require 'capybara/rails'
+require 'database_cleaner/active_record'
+
+DatabaseCleaner.strategy = :truncation
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -26,6 +31,7 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove these lines.
 begin
   ActiveRecord::Migration.maintain_test_schema!
+  DatabaseCleaner.clean
 rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
