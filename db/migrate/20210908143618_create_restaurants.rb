@@ -10,7 +10,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.1]
       t.decimal :latitude, null: false
       t.decimal :longitude, null: false
       t.string :cuisine
-      t.belongs_to :regions
+      t.belongs_to :region
       t.timestamps
     end
   end

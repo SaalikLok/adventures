@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2021_09_08_143618) do
     t.decimal "latitude", null: false
     t.decimal "longitude", null: false
     t.string "cuisine"
-    t.bigint "regions_id"
+    t.bigint "region_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["regions_id"], name: "index_restaurants_on_regions_id"
+    t.index ["region_id"], name: "index_restaurants_on_region_id"
   end
 
 end

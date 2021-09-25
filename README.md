@@ -17,9 +17,10 @@ The main intentions are as follows:
 ### Technologies
 
 - Ruby on Rails
-- React
-- Emotion
+- Haml
+- Bulma
 - RSpec
+- React (just a splash)
 
 ### Running Locally + Contributing
 
