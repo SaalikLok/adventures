@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_08_143618) do
   create_table "regions", force: :cascade do |t|
     t.string "city", null: false
     t.string "state", null: false
-    t.string "coutnry", null: false
+    t.string "country", null: false
     t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
