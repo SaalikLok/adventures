@@ -1,2 +1,25 @@
-- @regions.each do |region|
-  %h2.title= region.city
+.section 
+  .container
+    %p.title Explore
+    .columns 
+      - @regions.each do |region|
+        .column
+          .card 
+            .card-image 
+              %figure.image.is-3by2
+                %img(src="#{region.img_url}" alt="#{region.city}")/
+            .card-content 
+              %h3.title.is-4= "#{region.city}, #{region.state}"
+              %p= region.country
+
+.section 
+  .container
+    %p.subtitle What's this site about?
+    %p.mb-3 
+      When Jackie and I moved to Austin, we started capturing our experiences (from food to nature and more) in a Notion database. We did this so that we could remember places that we've visited and create a database for when our friends visited and came to town.
+      Quickly outgrowing the database on Notion, we also realized that as the world opens up, we wanted to capture the same kind of information through our future travels. That's when I put the software engineer hat on and decided to build out this website for our adventures.   
+    %p.mb-3 The main intentions are as follows:
+    %ul 
+      %li Have a public, live, travel journal that Jackie and I can look back on.
+      %li Easily share our adventure recommendations with friends and family.
+      %li Build my skills as an engineer by maintaining a growing full-stack application.
