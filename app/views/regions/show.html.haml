@@ -4,6 +4,20 @@
       %h2.title.city-title= "Restaurants of #{@region.city}"
 
 .section 
-  .container 
-    - @restaurants.each do |restaurant|
-      %p= restaurant.name 
+  .container
+    %table.table 
+      %thead 
+        %tr 
+          %th Name
+          %th Rating
+          %th Cuisine
+          %th Updated
+          %th Description
+      %tbody 
+        - @restaurants.each do |restaurant|
+          %tr 
+            %td= restaurant.name 
+            %td= restaurant.rating 
+            %td= restaurant.cuisine 
+            %td= restaurant.updated_at.strftime("%D")
+            %td= restaurant.description 
