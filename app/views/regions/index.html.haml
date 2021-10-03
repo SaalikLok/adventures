@@ -1,9 +1,9 @@
 .section 
   .container
-    %p.title Explore
+    %p.title Regions
     .columns 
       - @regions.each do |region|
-        .column
+        .column.is-one-third
           = link_to region_path(region) do
             .card 
               .card-image 
