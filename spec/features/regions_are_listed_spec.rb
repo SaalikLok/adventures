@@ -1,13 +1,18 @@
 require 'rails_helper'
 
 RSpec.feature "regions are shown on the regions page", type: :feature do
-  before :each do
-    create(:region)
-    create(:region)
-    create(:region)
+  let!(:region) { create(:region) } 
+
+  scenario "Regions are visible on the regions index page" do
+    visit '/'
+    expect(page).to have_content region.city
+    expect(page).to have_content region.state
+    expect(page).to have_content region.country
   end
 
-  xscenario "All regions are visible on the regions index page" do
-    visit '/regions'
+  scenario "Clicking on a region card navigates to region show" do
+    visit '/'
+    click_link 'Austin'
+    expect(page).to have_current_path(region_path(region.id))
   end
 end

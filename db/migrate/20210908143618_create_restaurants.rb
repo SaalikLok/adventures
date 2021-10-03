@@ -5,10 +5,9 @@ class CreateRestaurants < ActiveRecord::Migration[6.1]
       t.string :description
       t.text :notes
       t.string :rating
-      t.boolean :tried, default: false
       t.string :img_url
-      t.decimal :latitude, null: false
-      t.decimal :longitude, null: false
+      t.decimal :latitude
+      t.decimal :longitude
       t.string :cuisine
       t.belongs_to :region
       t.timestamps

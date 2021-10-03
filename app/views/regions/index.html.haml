@@ -4,13 +4,14 @@
     .columns 
       - @regions.each do |region|
         .column
-          .card 
-            .card-image 
-              %figure.image.is-3by2
-                %img(src="#{region.img_url}" alt="#{region.city}")/
-            .card-content 
-              %h3.title.is-4= "#{region.city}, #{region.state}"
-              %p= region.country
+          = link_to region_path(region) do
+            .card 
+              .card-image 
+                %figure.image.is-3by2
+                  %img(src="#{region.img_url}" alt="#{region.city}")/
+              .card-content 
+                %h3.title.is-4= "#{region.city}, #{region.state}"
+                %p= region.country
 
 .section 
   .container

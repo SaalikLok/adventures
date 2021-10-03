@@ -1,2 +1,9 @@
-%h2= @region.city
-%p= "#{@region.state}, #{@region.country}"
+.hero.is-medium{ style: "background: url(#{@region.img_url}) no-repeat center" }
+  .container
+    .hero-body
+      %h2.title.city-title= "Restaurants of #{@region.city}"
+
+.section 
+  .container 
+    - @restaurants.each do |restaurant|
+      %p= restaurant.name 

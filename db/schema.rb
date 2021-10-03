@@ -29,10 +29,9 @@ ActiveRecord::Schema.define(version: 2021_09_08_143618) do
     t.string "description"
     t.text "notes"
     t.string "rating"
-    t.boolean "tried", default: false
     t.string "img_url"
-    t.decimal "latitude", null: false
-    t.decimal "longitude", null: false
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.string "cuisine"
     t.bigint "region_id"
     t.datetime "created_at", precision: 6, null: false
