@@ -5,6 +5,6 @@ class RegionsController < ApplicationController
 
   def show
     @region = Region.find(params[:id])
-    @restaurants = @region.restaurants
+    @restaurants = @region.restaurants.order(rating: :desc)
   end
 end

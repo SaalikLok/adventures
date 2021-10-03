@@ -4,7 +4,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.1]
       t.string :name, null: false
       t.string :description
       t.text :notes
-      t.string :rating
+      t.integer :rating
       t.string :img_url
       t.decimal :latitude
       t.decimal :longitude
