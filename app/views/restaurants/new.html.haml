@@ -1,0 +1,39 @@
+.section 
+  .container 
+    %p.title Add a New Restaurant
+    %p.subtitle If you're not Saalik or Jackie you shouldn't be here 😉
+
+    = form_with url: "/restaurants" do |f|
+      .field 
+        %label.label(for="region") Region
+        .control
+          .select.is-rounded
+            = f.select :region, @region_cities, { selected: "Austin" }
+      .field 
+        %label.label(for="name") Restaurant name
+        .control 
+          = f.text_field :name, { class: "input is-rounded" }
+
+      .field 
+        %label.label(for="description") Description
+        .control 
+          = f.text_field :description, { class: "input is-rounded", placeholder: "Keep it short!" }
+
+      .field 
+        %label.label(for="cuisine") Cuisine
+        .control 
+          = f.text_field :cuisine, { class: "input is-rounded", placeholder: "Spelling counts ;)" }
+      
+      .field
+        %label.label(for="rating") Rating 
+        .control
+          = f.number_field :rating, { max: 5, min: 1, class: "input is-medium is-rounded", placeholder: "On a scale of 5" }
+      
+      .field 
+        %label.label(for="notes") Notes 
+        .control 
+          = f.text_area :notes, { class: "textarea is-rounded", placeholder: "Optional Notes" }
+
+      .field 
+        .control 
+          %button.button.is-link Add restaurant

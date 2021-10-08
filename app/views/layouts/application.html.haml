@@ -13,7 +13,11 @@
     = stylesheet_link_tag 'application', media: 'all'
     %script{src:"https://kit.fontawesome.com/492794bb7e.js", crossorigin: "anonymous" }
     = javascript_pack_tag 'application'
+  
   %body
+    - flash.each do |type, msg|
+      .notification.is-warning= msg
+    
     .hero 
       .hero-body
         %h1.mb-3 
