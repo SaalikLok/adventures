@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'regions#index'
 
   resources :regions, only: [:index, :show]
+  resources :restaurants, only: [:new, :create]
 end
