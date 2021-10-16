@@ -15,3 +15,7 @@ ul {
 .nav-title {
   cursor: pointer;
 }
+
+.is-clickable:hover {
+  opacity: 0.85;
+}
