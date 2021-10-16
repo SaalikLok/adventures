@@ -1,4 +1,7 @@
 class RestaurantsController < ApplicationController
+  protect_from_forgery prepend: true
+  before_action :authenticate_admin!
+
   def new
     @region_cities = Region.select(:city).map { |region| region.city }
   end

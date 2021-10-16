@@ -2,15 +2,19 @@ require "rails_helper"
 
 feature "add a restaurant:" do
   let!(:region) { create(:region) }
+  let!(:admin) { create(:admin) }
+
+  before do
+    login_as(admin)
+    visit "/restaurants/new"
+  end
 
   scenario "visiting the new restaurant path shows the form title" do
-    visit "/restaurants/new"
     expect(page).to have_content "Add a New Restaurant"
     expect(page).to have_content "If you're not Saalik or Jackie you shouldn't be here 😉"
   end
 
   scenario "correctly filling the form adds a new restaurant and redirects" do
-    visit "restaurants/new"
     select "Austin", from: "region"
     fill_in "name", with: "Titaya Restaurant"
     fill_in "cuisine", with: "Thai"
@@ -21,7 +25,6 @@ feature "add a restaurant:" do
   end
 
   scenario "adding notes and correctly filling the form adds a new restaurant and redirects" do
-    visit "restaurants/new"
     select "Austin", from: "region", visible: false
     fill_in "name", with: "Titaya Restaurant"
     fill_in "cuisine", with: "Thai"
@@ -33,7 +36,6 @@ feature "add a restaurant:" do
   end
 
   scenario "adding description and correctly filling the form adds a new restaurant and redirects" do
-    visit "restaurants/new"
     select "Austin", from: "region"
     fill_in "name", with: "Titaya Restaurant"
     fill_in "cuisine", with: "Thai"
@@ -45,7 +47,6 @@ feature "add a restaurant:" do
   end
 
   scenario "missing the restaurant name throws a flash message" do
-    visit "restaurants/new"
     select "Austin", from: "region"
     fill_in "cuisine", with: "Thai"
     fill_in "rating", with: 4
@@ -55,7 +56,6 @@ feature "add a restaurant:" do
   end
 
   scenario "missing the restaurant rating throws a flash message" do
-    visit "restaurants/new"
     select "Austin", from: "region"
     fill_in "name", with: "Titaya Restaurant"
     fill_in "cuisine", with: "Thai"

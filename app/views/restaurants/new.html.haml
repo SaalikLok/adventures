@@ -3,7 +3,7 @@
     %p.title Add a New Restaurant
     %p.subtitle If you're not Saalik or Jackie you shouldn't be here 😉
 
-    = form_with url: "/restaurants" do |f|
+    = form_with url: "/restaurants", html: { autocomplete: "off" } do |f|
       .field 
         %label.label(for="region") Region
         .control
