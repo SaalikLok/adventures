@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   protect_from_forgery prepend: true
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, only: [:new, :create]
 
   def new
     @region_cities = Region.select(:city).map { |region| region.city }
@@ -22,5 +22,10 @@ class RestaurantsController < ApplicationController
       flash[:alert] = "Whoops! #{@restaurant.errors.full_messages.to_sentence}"
       redirect_to new_restaurant_path
     end
+  end
+
+  def destroy
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
   end
 end

@@ -2,7 +2,7 @@ import React from "react";
 import RestaurantTableRow from "./RestaurantTableRow";
 
 const TableView = (props) => {
-  const { restaurants } = props;
+  const { restaurants, isAdmin, deleteRestaurant } = props;
 
   return (
     <table className="table is-fullwidth">
@@ -20,11 +20,14 @@ const TableView = (props) => {
           return (
             <RestaurantTableRow
               key={restaurant.id}
+              id={restaurant.id}
               name={restaurant.name}
               rating={restaurant.rating}
               cuisine={restaurant.cuisine}
               updated_at={restaurant.updated_at}
               description={restaurant.description}
+              isAdmin={isAdmin}
+              deleteRestaurant={deleteRestaurant}
             />
           );
         })}

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "regions are shown on the regions page", type: :feature do
+feature "regions are shown on the regions page", type: :feature do
   let!(:region) { create(:region) } 
 
   scenario "Regions are visible on the regions index page" do
