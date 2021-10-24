@@ -11,6 +11,8 @@ require 'database_cleaner'
 
 DatabaseCleaner.clean_with(:truncation)
 
+admin = Admin.create(email: "srocks225@aim.com", password: "password123456")
+
 austin = Region.create(city: "Austin", state: "Texas", country: "USA", img_url: "https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2069&q=80")
 boston = Region.create(city: "Boston", state: "Massachusetts", country: "USA", img_url: "https://images.unsplash.com/photo-1556079337-a837a2d11f04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1674&q=80")
 

@@ -5,4 +5,4 @@
 
 .section 
   .container
-    = react_component("RestaurantView", { restaurants: @restaurants } )
+    = react_component("RestaurantView", { restaurants: @restaurants, isAdmin: admin_signed_in? } )
