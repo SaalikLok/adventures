@@ -27,7 +27,7 @@
       .field
         %label.label(for="rating") Rating 
         .control
-          = f.number_field :rating, { max: 5, min: 1, class: "input is-medium is-rounded", placeholder: "On a scale of 5" }
+          = f.select :rating, [["AMAZE", 5], ["great", 4], ["good", 3], ["meh", 2], ["avoid", 1]]
       
       .field 
         %label.label(for="notes") Notes 

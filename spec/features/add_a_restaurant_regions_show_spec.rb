@@ -9,7 +9,7 @@ feature "add a restaurant on the region show page: " do
     visit "/regions/#{region.id}"
     fill_in "name", with: "Titaya Restaurant"
     fill_in "cuisine", with: "Thai"
-    fill_in "rating", with: 4
+    select "great", from: "rating"
     click_on "Add restaurant"
 
     expect(page).to have_current_path(region_path(region))
