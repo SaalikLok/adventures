@@ -1,17 +1,22 @@
-import React, { useState } from "react";
-import deleteRestaurant from "../helpers/deleteRestaurant";
+import React, { useState, useEffect } from "react";
 import TableView from "./restaurantViews/TableView";
 import CardView from "./restaurantViews/CardView";
+import deleteRestaurant from "../helpers/deleteRestaurant";
+import transformRatings from "../helpers/transformRatings";
 
 const RestaurantView = (props) => {
-  const { isAdmin } = props;
+  const { isAdmin, allRestaurants } = props;
 
   const [viewType, setViewType] = useState("card");
-  const [restaurants, setrestaurants] = useState(props.restaurants);
+  const [restaurants, setRestaurants] = useState(allRestaurants);
+
+  useEffect(() => {
+    setRestaurants(transformRatings(restaurants))
+  }, [])
 
   const deleteRestaurantFunction = (restaurantId) => {
     deleteRestaurant(restaurantId);
-    setrestaurants(
+    setRestaurants(
       restaurants.filter((restaurant) => restaurant.id != restaurantId)
     );
   };
