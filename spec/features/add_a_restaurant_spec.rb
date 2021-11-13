@@ -18,7 +18,7 @@ feature "add a restaurant:" do
     select "Austin", from: "region"
     fill_in "name", with: "Titaya Restaurant"
     fill_in "cuisine", with: "Thai"
-    fill_in "rating", with: 4
+    select "great", from: "rating"
     click_on "Add restaurant"
 
     expect(page).to have_current_path(region_path(region))
@@ -28,7 +28,7 @@ feature "add a restaurant:" do
     select "Austin", from: "region", visible: false
     fill_in "name", with: "Titaya Restaurant"
     fill_in "cuisine", with: "Thai"
-    fill_in "rating", with: 4
+    select "great", from: "rating"
     fill_in "notes", with: "Here is a long note. Titaya has fantastic cuisine and I can't even believe that it has that wowowow that pad thai is different. Good, and different."
     click_on "Add restaurant"
 
@@ -39,7 +39,7 @@ feature "add a restaurant:" do
     select "Austin", from: "region"
     fill_in "name", with: "Titaya Restaurant"
     fill_in "cuisine", with: "Thai"
-    fill_in "rating", with: 4
+    select "great", from: "rating"
     fill_in "description", with: "A great Thai restaurant. This description is short and sweet."
     click_on "Add restaurant"
 
@@ -49,16 +49,7 @@ feature "add a restaurant:" do
   scenario "missing the restaurant name throws a flash message" do
     select "Austin", from: "region"
     fill_in "cuisine", with: "Thai"
-    fill_in "rating", with: 4
-    click_on "Add restaurant"
-
-    expect(page).to have_content("Whoops!")
-  end
-
-  scenario "missing the restaurant rating throws a flash message" do
-    select "Austin", from: "region"
-    fill_in "name", with: "Titaya Restaurant"
-    fill_in "cuisine", with: "Thai"
+    select "great", from: "rating"
     click_on "Add restaurant"
 
     expect(page).to have_content("Whoops!")
