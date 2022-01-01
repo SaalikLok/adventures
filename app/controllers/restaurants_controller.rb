@@ -15,7 +15,7 @@ class RestaurantsController < ApplicationController
       cuisine: params[:cuisine],
       notes: params[:notes]
     )
-    
+
     if @restaurant.save
       redirect_to region_path(@restaurant.region)
     else

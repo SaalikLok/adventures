@@ -5,7 +5,7 @@ class CreateRegion < ActiveRecord::Migration[6.1]
       t.string :state, null: false
       t.string :country, null: false
       t.string :img_url
-      
+
       t.timestamps
     end
   end

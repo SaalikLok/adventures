@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Restaurant, type: :model do
   let!(:restaurant) { create(:restaurant) }
