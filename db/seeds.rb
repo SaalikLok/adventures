@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Delete any existing data before re-seeding the db
-require 'database_cleaner'
+require "database_cleaner"
 
 DatabaseCleaner.clean_with(:truncation)
 
@@ -24,7 +24,6 @@ Restaurant.create(
   region: austin
 )
 
-
 Restaurant.create(
   name: "Maude's TexMex",
   description: "Side of the road joint. Meh.",
@@ -33,7 +32,6 @@ Restaurant.create(
   region: austin
 )
 
-
 Restaurant.create(
   name: "Kura Revolving Sushi Bar",
   description: "Revolving sushi on fun plates",
@@ -41,7 +39,6 @@ Restaurant.create(
   rating: 4,
   region: austin
 )
-
 
 Restaurant.create(
   name: "Julie's Noodles",
@@ -55,5 +52,5 @@ Restaurant.create(
   name: "Brown Sugar",
   cuisine: "Thai",
   rating: 4,
-  region: boston,
+  region: boston
 )

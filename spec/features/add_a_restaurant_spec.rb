@@ -55,4 +55,3 @@ feature "add a restaurant:" do
     expect(page).to have_content("Whoops!")
   end
 end
-
