@@ -1,6 +1,6 @@
 class RegionsController < ApplicationController
   def index
-    @regions = Region.all
+    @regions = Region.all.order(:city)
   end
 
   def show

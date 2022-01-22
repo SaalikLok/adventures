@@ -1,0 +1,16 @@
+.box 
+  %i.fas.fa-award.fa-2x
+  %p.subtitle Region Scoreboard
+
+  %table.table
+    %thead
+      %tr 
+        %th Position
+        %th Region 
+        %th Restaurants
+    %tbody 
+      - regions.each_with_index do |region, index|
+        %tr
+          %th= index+1
+          %th= region.city 
+          %th= region.restaurants.count
