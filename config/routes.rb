@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :regions, only: [:index, :show]
   resources :restaurants, only: [:new, :create, :destroy]
+  get "/dashboard", to: "dashboards#index"
+  get "/admin" => "dashboards#index", :as => :admin_root
 end

@@ -1,0 +1,11 @@
+.section
+  .container 
+    %h1.title Admin Dash
+    .columns 
+      .column.is-one-third
+        = render 'action_panel'
+      .column.is-one-third
+        = render partial: 'stat_cards', locals: { regions: @regions, number_of_restaurants: @number_of_restaurants } 
+      .column.is-one-third 
+        = render partial: 'scoreboard', locals: { regions: @regions }
+                
